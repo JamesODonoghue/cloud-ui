@@ -1,0 +1,718 @@
+{
+    "Id": "portfolio-session-orders",
+    "EntityView": "sessionModel",
+    "Protocol": "REST_QUERY",
+    "Caption": "PortfolioSession",
+    "Version": 0.76,
+    "Config": {
+        "CanFilter": true,
+        "CanSearch": false,
+        "CanEdit": true,
+        "CanSort": true,
+        "CanPage": false
+    },
+    "ViewState": {
+        "Sort": [
+            {
+                "FieldId": "IsRootCashContainer",
+                "Dir": "desc"
+            },
+            {
+                "FieldId": "IsCashInstruction",
+                "Dir": "desc"
+            },
+            {
+                "FieldId": "Name",
+                "Dir": "asc"
+            }
+        ],
+        "Filter": {
+            "Logic": "OR",
+            "Filters": []
+        },
+        "Params": [
+            {
+                "Key": "hierarchy",
+                "Caption": "Group By:",
+                "Visible": true,
+                "FieldId": "hierarchyId"
+            }
+        ]
+    },
+    "Model": {
+        "Schema": {
+            "id": "PortfolioSessionId"
+        },
+        "Fields": [
+            {
+                "Id": "IssueSeverity",
+                "Icon": {
+                    "IconName": "link"
+                },
+                "Visible": true,
+                "CanSort": false,
+                "CanCustomize": false,
+                "Caption": "",
+                "Frozen": true,
+                "Size": {
+                    "Width": 48
+                }
+            },
+            {
+                "Id": "Name",
+                "Caption": "Name",
+                "DataType": "Html",
+                "Visible": true,
+                "CanSearch": true,
+                "CanCustomize": false,
+                "Frozen": true,
+                "Size": {
+                    "Variable": true,
+                    "MinWidth": 250
+                }
+            },
+            {
+                "Id": "Symbol",
+                "Caption": "Symbol",
+                "CanEdit": false,
+                "CanCustomize": false,
+                "CanSearch": true,
+                "Frozen": true,
+                "UIType": "Link",
+                "Link": {
+                    "Route": "SECURITY_DETAIL",
+                    "ValueField": "SecurityId"
+                },
+                "Size": {
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "PortfolioName",
+                "CanSearch": true,
+                "UIType": "Link",
+                "CanCustomize": true,
+                "Visible": false,
+                "Caption": "Portfolio",
+                "Link": {
+                    "Route": "PORTFOLIO_DETAIL",
+                    "ValueField": "PortfolioId"
+                },
+                "Size": {
+                    "Variable": true,
+                    "MinWidth": 200
+                }
+            },
+            {
+                "Id": "PortfolioId",
+                "Caption": "PortfolioId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "HasRestriction",
+                "DataType": "Html",
+                "Size": {
+                    "Width": 50
+                },
+                "Caption": "Res.",
+                "Visible": false
+            },
+            {
+                "Id": "orderSource",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Order Source",
+                "Visible": false
+            },
+            {
+                "Id": "orderApprovalStatus",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Order Approval Status",
+                "Visible": false
+            },
+            {
+                "Id": "TraderInstruction",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Trader Instr",
+                "Visible": false
+            },
+            {
+                "Id": "BrokerInstruction",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Broker Instr",
+                "Visible": false
+            },
+            {
+                "Id": "DirectNoteCount",
+                "DataType": "Int",
+                "UIType": "Count",
+                "Caption": "Order Notes",
+                "Visible": true,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "Price",
+                "Caption": "Price (Local)",
+                "DataType": "Float"
+            },
+            {
+                "Id": "BasePrice",
+                "Caption": "Price (Base)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "Currency",
+                "Caption": "CCY (Local)"
+            },
+            {
+                "Id": "SettleCurrency",
+                "Caption": "CCY (Settle)",
+                "Visible": false
+            },
+            {
+                "Id": "SettleSymbol",
+                "Caption": "Settle Cash Symbol",
+                "Visible": false
+            },
+            {
+                "Id": "AbsoluteLowerTolerancePercent",
+                "Caption": "Low Limit",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "InvestableStartPercent",
+                "Caption": "Current %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Precision": 3
+            },
+            {
+                "Id": "TargetPercent",
+                "Caption": "Target %",
+                "UIType": "PercentageFinancial",
+                "Visible": false,
+                "DataType": "Float",
+                "Precision": 3
+            },
+            {
+                "Id": "AdjustedTargetPercent",
+                "Caption": "Session Target %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Precision": 3
+            },
+            {
+                "Id": "RelativeStartPercent",
+                "Caption": "Rel Current %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "RelativeTargetPercent",
+                "Caption": "Rel Target %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false,
+                "Precision": 3
+            },
+            {
+                "Id": "StartTol",
+                "CanSort": 0,
+                "Caption": "Current Tol",
+                "ShowTip": true,
+                "Size": {
+                    "Variable": false,
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "AbsoluteUpperTolerancePercent",
+                "Caption": "High Limit",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "DriftPercent",
+                "Caption": "Current Drift %",
+                "UIType": "PercentageFinancial",
+                "Visible": false,
+                "DataType": "Float"
+            },
+            {
+                "Id": "AdjustedDriftPercent",
+                "Caption": "Session Current Drift %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float"
+            },
+            {
+                "Id": "DriftAmount",
+                "Caption": "Current Drift Value",
+                "DataType": "Float",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "AdjustedDriftAmount",
+                "Caption": "Session Current Drift Value",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "TransactionType",
+                "Caption": "Txn Type"
+            },
+            {
+                "Id": "cmvToleranceStatus",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "pmvToleranceStatus",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "ProposedBuySell",
+                "Caption": "Chg in Qty",
+                "DataType": "Float",
+                "CanEdit": true
+            },
+            {
+                "Id": "InvestableChangeInPercent",
+                "Caption": "Chg %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": true,
+                "Precision": 3
+            },
+            {
+                "Id": "ProposedInvestableEndPercent",
+                "Caption": "End %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": true,
+                "Precision": 3
+            },
+            {
+                "Id": "ProposedRelativeEndPercent",
+                "Caption": "Rel End %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": false,
+                "Visible": false
+            },
+            {
+                "Id": "EndTol",
+                "CanSort": 0,
+                "Caption": "End Tol",
+                "ShowTip": true,
+                "Size": {
+                    "Variable": false,
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "ProposedDriftPercent",
+                "Caption": "End Drift %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ProposedAdjustedDriftPercent",
+                "Caption": "Session End Drift %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": true,
+                "Precision": 3
+            },
+            {
+                "Id": "CurrentAccruedInterest",
+                "Caption": "Current AI",
+                "DataType": "Float",
+                "Visible": false,
+                "Size": {
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "ChangeInAccruedInterest",
+                "Caption": "Chg in AI",
+                "DataType": "Float",
+                "Visible": false,
+                "Size": {
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "ProposedAccruedInterest",
+                "Caption": "End AI",
+                "DataType": "Float",
+                "Visible": false,
+                "Size": {
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "Cusip",
+                "Caption": "Cusip",
+                "DataType": "Text",
+                "Visible": false
+            },
+            {
+                "Id": "Isin",
+                "Caption": "ISIN",
+                "DataType": "Text",
+                "Visible": false
+            },
+            {
+                "Id": "Sedol",
+                "Caption": "Sedol",
+                "DataType": "Text",
+                "Visible": false
+            },
+            {
+                "Id": "Quantity",
+                "Caption": "Current Qty",
+                "DataType": "Float",
+                "ShowTip": true,
+                "Icon": {
+                    "IconName": "processing-orders-icon",
+                    "Align": "Prefix",
+                    "HeaderAlign": "Right",
+                    "DerivedFrom": "hasApprovedWorkingTransactions"
+                }
+            },
+            {
+                "Id": "ProposedEndQuantity",
+                "Caption": "End Qty",
+                "DataType": "Float"
+            },
+            {
+                "Id": "MarketValue",
+                "Caption": "Current Value",
+                "DataType": "Float",
+                "UIType": "Currency"
+            },
+            {
+                "Id": "LocalMarketValue",
+                "Caption": "Current Value (Local)",
+                "DataType": "Float",
+                "UIType": "Currency",
+                "Visible": false
+            },
+            {
+                "Id": "LocalToBookFxRate",
+                "Caption": "FX Rate",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ChangeInValue",
+                "Caption": "Chg in Val",
+                "CanEdit": true,
+                "DataType": "Float"
+            },
+            {
+                "Id": "ChangeInValueLocal",
+                "Caption": "Chg in Val (Local)",
+                "CanEdit": true,
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ProposedMarketValue",
+                "Caption": "End Value",
+                "DataType": "Float",
+                "UIType": "Currency"
+            },
+            {
+                "Id": "ProposedLocalMarketValue",
+                "Caption": "End Value (Local)",
+                "DataType": "Float",
+                "UIType": "Currency",
+                "Visible": false
+            },
+            {
+                "Id": "RealizedGainLoss",
+                "Caption": "RGL",
+                "DataType": "Float"
+            },
+            {
+                "Id": "RGLPortfolioPercentage",
+                "Caption": "RGL %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial"
+            },
+            {
+                "Id": "closingMethod",
+                "Caption": "Closing Method ",
+                "Visible": false
+            },
+            {
+                "Id": "ShortTermRealizedGain",
+                "Caption": "STRG",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ShortTermRealizedLoss",
+                "Caption": "STRL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "LongTermRealizedGain",
+                "Caption": "LTRG",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "LongTermRealizedLoss",
+                "Caption": "LTRL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "UnrealizedGainLoss",
+                "Caption": "End UGL",
+                "DataType": "Float"
+            },
+            {
+                "Id": "UGLPortfolioPercentage",
+                "Caption": "End UGL %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial"
+            },
+            {
+                "Id": "shortTermGain",
+                "Caption": "STUG",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "shortTermLoss",
+                "Caption": "STUL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "longTermGain",
+                "Caption": "LTUG",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "longTermLoss",
+                "Caption": "LTUL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "shortTermGainLoss",
+                "Caption": "ST UGL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "shortTermGainLossPercent",
+                "Caption": "ST UGL %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "longTermGainLoss",
+                "Caption": "LT UGL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "longTermGainLossPercent",
+                "Caption": "LT UGL %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ShortTermRealizedGainLoss",
+                "Caption": "ST RGL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "LongTermRealizedGainLoss",
+                "Caption": "LT RGL",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "Status",
+                "Visible": false
+            },
+            {
+                "Id": "ProposedDriftAmount",
+                "Caption": "End Drift Value",
+                "DataType": "Float",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "ChangeInAdjustedDriftAmount",
+                "Caption": "Session Chg in Drift Value",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ProposedAdjustedDriftAmount",
+                "Caption": "Session End Drift Value",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "isCurrentMvInTolerance",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "isProposedMvInTolerance",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "RestrictionSeverity",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "SessionModelId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "IsRootCashContainer",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "IsCashInstruction",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "hasApprovedWorkingTransactions",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "CanDelete",
+                "UIType": "Bool",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "ParentStartValue",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "hasSubstituteDefined",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "isSubstitute",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "SecurityId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "securitySubstitutionListId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "hierarchyId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "IsSecurityDeleted",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "Dividend",
+                "Caption": "Div Rate / YR",
+                "DataType": "Float",
+                "Visible": false,
+                "UIType": "Currency",
+                "Precision": 3
+            },
+            {
+                "Id": "CurrentIncomeBase",
+                "Caption": "Curr Income /YR (Base)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "CurrentIncomeLocal",
+                "Caption": "Curr Income /YR (Local)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "EndIncomeBase",
+                "Caption": "End Income /YR (Base)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "EndIncomeLocal",
+                "Caption": "End Income /YR (Local)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ChangeInIncomeBase",
+                "Caption": "Change in Income /YR (Base)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ChangeInIncomeLocal",
+                "Caption": "Change in Income /YR (Local)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "DividendYield",
+                "Caption": "Div Yield",
+                "DataType": "Float",
+                "Visible": false,
+                "UIType": "PercentageFinancial",
+                "Precision": 3
+            }
+        ]
+    }
+}

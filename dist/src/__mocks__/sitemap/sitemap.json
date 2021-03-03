@@ -1,0 +1,496 @@
+{
+    "viewId": "dashboard",
+    "name": "Dashboard",
+    "route": "/",
+    "children": [
+        {
+            "viewId": "portfolio",
+            "name": "Portfolios",
+            "children": [
+                {
+                    "viewId": "portfolios",
+                    "name": "View Portfolios",
+                    "route": "/portfolios",
+                    "fullroute": "/portfolios",
+                    "children": [
+                        {
+                            "viewId": "portfolio-detail",
+                            "name": "Portfolio Detail",
+                            "route": "/portfolios/:id",
+                            "children": [
+                                {
+                                    "viewId": "portfolio-summary",
+                                    "name": "Summary",
+                                    "route": "/",
+                                    "fullroute": "/portfolios/:id",
+                                    "id": "PortfolioId",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-appraisal",
+                                    "name": "Appraisal",
+                                    "id": "PortfolioId",
+                                    "route": "appraisal",
+                                    "fullroute": "/portfolios/:id/appraisal",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-orders",
+                                    "name": "Orders",
+                                    "route": "orders",
+                                    "fullroute": "/portfolios/:id/orders",
+                                    "id": "PortfolioId",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-trade-settings",
+                                    "name": "Trade Settings",
+                                    "id": "PortfolioId",
+                                    "route": "trade-settings",
+                                    "fullroute": "/portfolios/:id/trade-settings",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-restrictions",
+                                    "name": "Restrictions",
+                                    "id": "PortfolioId",
+                                    "route": "restrictions",
+                                    "fullroute": "/portfolios/:id/restrictions",
+                                    "children": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "viewId": "position-analysis",
+                    "name": "View Position Analysis",
+                    "route": "/position-analysis",
+                    "fullroute": "/portfolios",
+                    "children": null
+                },
+                {
+                    "viewId": "drift-list",
+                    "name": "View Position Analysis",
+                    "url": "/drift",
+                    "children": null
+                },
+                {
+                    "viewId": "exposure-analysis",
+                    "name": "View Exposure Analysis",
+                    "url": "/exposure-analysis",
+                    "children": null
+                },
+                {
+                    "viewId": "classification-drift",
+                    "name": "View Classification Drift",
+                    "url": "/classification-drift",
+                    "children": null
+                },
+                {
+                    "viewId": "portfolio-lists",
+                    "name": "View Portfolio Lists",
+                    "url": "/portfolio-lists",
+                    "children": null
+                },
+                {
+                    "viewId": "cash-needs",
+                    "name": "Cash Drift",
+                    "route": "/cash-needs",
+                    "children": null
+                },
+                {
+                    "viewId": "cash-transactions",
+                    "name": "Cash Transactions",
+                    "route": "/cash-transactions",
+                    "children": null
+                },
+                {
+                    "viewId": "cash-instructions",
+                    "name": "Cash Instructions",
+                    "route": "/cash-instructions",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "viewId": "models",
+            "name": "Models",
+            "route": "/models",
+            "children": [
+                {
+                    "viewId": "model-detail",
+                    "name": "Model Detail",
+                    "route": "/models/:id",
+                    "external": true,
+                    "children": [
+                        {
+                            "viewId": "model-editor",
+                            "name": "Model",
+                            "id": "ModelId",
+                            "route": "editor",
+                            "fullroute": "/models/:id/editor",
+                            "external": true,
+                            "children": null
+                        },
+                        {
+                            "viewId": "model-compare",
+                            "name": "Compare",
+                            "id": "ModelId",
+                            "route": "compare",
+                            "fullroute": "/models/:id/compare",
+                            "external": true,
+                            "children": null
+                        },
+                        {
+                            "viewId": "model-history",
+                            "name": "History",
+                            "id": "ModelId",
+                            "route": "history",
+                            "fullroute": "/models/:id/history",
+                            "external": true,
+                            "children": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "viewId": "securities",
+            "name": "Securities",
+            "route": "/securities",
+            "children": [
+                {
+                    "viewId": "securities",
+                    "children": [
+                        {
+                            "viewId": "security-detail",
+                            "name": "Summarys",
+                            "route": "/securities",
+                            "id": "SecurityId",
+                            "children": null
+                        },
+                        {
+                            "viewId": "security-classifications",
+                            "name": "Classifications",
+                            "route": "/securities",
+                            "id": "SecurityId",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "viewId": "security-equivalents",
+                    "name": "Security Equivalents",
+                    "route": "/substitution",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "viewId": "session",
+            "name": "Sessions",
+            "route": "/sessions",
+            "disabled": true,
+            "children": [
+                {
+                    "viewId": "sessions",
+                    "route": "/sessions",
+                    "children": [
+                        {
+                            "viewId": "session-detail",
+                            "name": "Session Detail",
+                            "route": "/sessions/:id",
+                            "id": "RebalanceSessionId",
+                            "children": [
+                                {
+                                    "viewId": "portfolio-session-orders",
+                                    "name": "Portfolio Session",
+                                    "title": "Orders",
+                                    "route": "/sessions/:id/orders",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-session-taxlots",
+                                    "name": "Tax Lots",
+                                    "title": "Tax Lots",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-session-alerts",
+                                    "name": "Portfolio Session",
+                                    "title": "Portfolio Alerts",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-session-trade-settings",
+                                    "name": "Portfolio Session",
+                                    "title": "Settings",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-session-restrictions",
+                                    "name": "Portfolio Session",
+                                    "title": "Restrictions",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-session-summary",
+                                    "name": "Portfolio Session",
+                                    "title": "Summary",
+                                    "children": null
+                                }
+                            ]
+                        },
+                        {
+                            "viewId": "session-orders",
+                            "name": "Session Summary",
+                            "title": "Session Orders",
+                            "route": "/sessions",
+                            "id": "RebalanceSessionId",
+                            "children": [
+                                {
+                                    "viewId": "session-orders-detail",
+                                    "name": "Order Details",
+                                    "title": "",
+                                    "children": null
+                                }
+                            ]
+                        },
+                        {
+                            "viewId": "session-alerts",
+                            "name": "Session Summary",
+                            "title": "Session Alerts",
+                            "route": "/sessions",
+                            "id": "RebalanceSessionId",
+                            "children": [
+                                {
+                                    "viewId": "session-alerts-detail",
+                                    "name": "Session Alerts",
+                                    "title": "",
+                                    "children": null
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "viewId": "orders",
+            "name": "Orders",
+            "children": null
+        },
+        {
+            "viewId": "settings",
+            "name": "Settings",
+            "children": [
+                {
+                    "viewId": "portfolio-settings",
+                    "name": "Portfolio Settings",
+                    "title": "Portfolio Settings",
+                    "route": "/portfolio-settings",
+                    "children": [
+                        {
+                            "viewId": "portfolio-settings-detail",
+                            "name": "Portfolio Setting",
+                            "route": "/portfolio-settings/:id",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "viewId": "trade-settings",
+                    "name": "Trade Settings",
+                    "title": "Trade Settings",
+                    "route": "/trade-settings",
+                    "children": [
+                        {
+                            "viewId": "trade-settings-detail",
+                            "name": "Trade Setting",
+                            "title": "Detail",
+                            "children": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "viewId": "data-refresh-list",
+            "name": "Data Refresh History",
+            "route": "/data-refresh-list",
+            "hidden": true,
+            "children": null
+        },
+        {
+            "viewId": "alerts",
+            "name": "Alerts",
+            "title": "Alerts",
+            "route": "/alerts",
+            "children": null
+        },
+        {
+            "viewId": "restrictions",
+            "name": "Restrictions",
+            "title": "Restrictions",
+            "route": "/restrictions",
+            "children": [
+                {
+                    "viewId": "restriction-assignment",
+                    "name": "Restriction Assignments",
+                    "title": "Restriction Assignments",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "viewId": "insight-screen",
+            "name": "Insight",
+            "title": "Insight",
+            "route": "/insight"
+        },
+        {
+            "viewId": "config",
+            "name": "Configuration",
+            "route": "/config",
+            "children": [
+                {
+                    "viewId": "firm-settings",
+                    "name": "Firm Settings",
+                    "title": "Firm Settings",
+                    "route": "/firm-settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "sleeve-strategies",
+                    "name": "Sleeve Strategies",
+                    "title": "Sleeve Strategies",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "integration-settings",
+                    "name": "Integration Settings",
+                    "title": "Integration Settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "valuation-settings",
+                    "name": "Valuation Settings",
+                    "title": "Valuation Settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "tax-settings",
+                    "name": "Tax Settings",
+                    "title": "Tax Settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "users",
+                    "name": "Users",
+                    "route": "/users",
+                    "children": [
+                        {
+                            "viewId": "user-detail",
+                            "name": "User Detail",
+                            "title": "Summary",
+                            "children": null,
+                            "params": {
+                                "settings": {
+                                    "entityView": "user-detail",
+                                    "id": null,
+                                    "htmlID": "users-list",
+                                    "channel": "USERS",
+                                    "paging": true
+                                }
+                            }
+                        },
+                        {
+                            "viewId": "user-roles",
+                            "name": "User Roles",
+                            "title": "Roles",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "viewId": "groups",
+                    "name": "Groups",
+                    "route": "/groups",
+                    "children": [
+                        {
+                            "viewId": "group-detail",
+                            "name": "Group Detail",
+                            "title": "Summary",
+                            "children": null
+                        },
+                        {
+                            "viewId": "group-users",
+                            "name": "Members",
+                            "title": "Members",
+                            "children": null
+                        },
+                        {
+                            "viewId": "group-resources",
+                            "name": "Resources",
+                            "title": "Resources",
+                            "children": null
+                        },
+                        {
+                            "viewId": "group-roles",
+                            "name": "Roles",
+                            "title": "Roles",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "viewId": "roles",
+                    "name": "Roles",
+                    "route": "/roles",
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "viewId": "role-permissions",
+                                    "name": "Role Detail",
+                                    "title": "Permissions",
+                                    "route": "/roles",
+                                    "children": null,
+                                    "params": {
+                                        "settings": {
+                                            "viewId": "role-permissions",
+                                            "htmlID": "role-permissions",
+                                            "entityView": "role-detail",
+                                            "channel": "ROLE_DETAIL"
+                                        }
+                                    }
+                                },
+                                {
+                                    "viewId": "role-users",
+                                    "name": "Role Users",
+                                    "route": "/roles",
+                                    "title": "Users",
+                                    "children": null,
+                                    "params": {
+                                        "settings": {
+                                            "viewId": "role-users",
+                                            "entityView": "role-users",
+                                            "htmlID": "role-users-list",
+                                            "channel": "ROLE_DETAIL"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

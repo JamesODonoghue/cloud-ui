@@ -1,0 +1,22 @@
+The Editable JavaScript TreeGrid source code license
+Debug version of the source codes
+
+Licensee may use the source code for debugging or learning purposes 
+and is permitted to modify the source code to comply with their needs.
+
+Licensee must not change or remove any security, component or license restriction 
+and registration validation from the source code.
+
+Licensee may include the source code to internal testing web pages and use it for debugging purposes.
+The pages with the source code must not be accessible or distributed outside Licensee company.
+
+Licensee must not distribute plain source code and even not any part of it.
+The source code must be compressed and obfuscated by compression routine "GenerateGridE.exe", 
+that is delivered with the source code. 
+The routine's final output is file GridE.js and only this file may be distributed 
+according TreeGrid component license that Licensee purchased with source code.
+
+The "ShrinkJScriptDll90.dll" routine may be used only for TreeGrid source code 
+and must not be distributed outside Licensed company.
+
+10/1/2012

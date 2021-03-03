@@ -1,0 +1,50 @@
+{
+    "Items": [
+        {
+            "Parent": "66276931-0202-4b09-a4b3-b42a0f9fb925",
+            "id": "66276931-0202-4b09-a4b3-b42a0f9fb925_2deaff7e-a42e-40cc-ac54-e30d33607a34",
+            "ModelId": "2deaff7e-a42e-40cc-ac54-e30d33607a34",
+            "Created": "2017-05-15T09:38:25.126",
+            "Modified": "2017-05-30T10:55:36.764",
+            "ModelType": "ModelClassifyingCollection",
+            "Name": "Equity",
+            "Target": 0.8,
+            "PortfolioTarget": 0.8,
+            "IsPortfolioAssignable": false,
+            "IsSharable": false,
+            "IsValid": false,
+            "IsValidAggregate": false,
+            "IsReadAuthorized": true,
+            "CreatedBy": "UI Testing",
+            "ModifiedBy": "UI Testing",
+            "assignedPortfolioCount": 0,
+            "linkedByModelCount": 0,
+
+            "ClassificationId": "ad984eb6-ffc0-4253-a486-564237ce193b",
+            "modelId": "2deaff7e-a42e-40cc-ac54-e30d33607a34"
+        },
+        {
+            "ModelType": "ModelClassifyingCollection",
+            "Parent": "66276931-0202-4b09-a4b3-b42a0f9fb925",
+            "id": "66276931-0202-4b09-a4b3-b42a0f9fb925_650ab9b7-26af-4177-a265-ffdb326ed444",
+            "ModelId": "650ab9b7-26af-4177-a265-ffdb326ed444",
+            "Created": "2017-05-16T10:04:31.932",
+            "Modified": "2017-05-16T10:04:31.932",
+            "Name": "Fixed Income",
+            "Target": 0.2,
+            "PortfolioTarget": 0.2,
+            "IsPortfolioAssignable": false,
+            "IsSharable": false,
+            "IsValid": true,
+            "IsValidAggregate": true,
+            "IsReadAuthorized": true,
+            "CreatedBy": "UI Testing",
+            "ModifiedBy": "UI Testing",
+            "assignedPortfolioCount": 0,
+            "linkedByModelCount": 0,
+
+            "ClassificationId": "5bdbdef1-2f35-4422-8ffd-cfb1bf1d7698",
+            "modelId": "650ab9b7-26af-4177-a265-ffdb326ed444"
+        }
+    ]
+}

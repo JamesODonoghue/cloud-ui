@@ -1,0 +1,259 @@
+{
+    "Id": "session-alerts",
+    "EntityView": "sessionAlerts",
+    "Protocol": "REST_QUERY",
+    "Caption": "Session Alerts",
+    "Version": 0.12,
+    "Config": {
+        "CanFilter": true,
+        "CanSearch": true,
+        "CanSort": true,
+        "CanPage": true,
+        "PageSize": 100
+    },
+    "ViewState": {
+        "Sort": [
+            {
+                "FieldId": "portfolioSessionName",
+                "Dir": "asc"
+            }
+        ],
+        "Filter": {
+            "Logic": "OR",
+            "Filters": []
+        },
+        "Params": [
+            {
+                "Key": "alert-type",
+                "Caption": "Alert Type",
+                "Visible": true,
+                "FieldId": "alertType"
+            },
+            {
+                "Key": "security",
+                "Caption": "Symbols",
+                "Visible": true,
+                "FieldId": "securityId"
+            },
+            {
+                "Key": "transaction-type",
+                "Caption": "Transaction Types",
+                "Visible": true,
+                "FieldId": "transactionType"
+            },
+            {
+                "Key": "alert-severity",
+                "Caption": "Severity",
+                "Visible": true,
+                "FieldId": "alertSeverity"
+            },
+            {
+                "Key": "enforcement-behavior",
+                "Caption": "Enforcement",
+                "Visible": true,
+                "FieldId": "enforcementBehavior"
+            },
+            {
+                "Key": "rule-category",
+                "Caption": "Rule Category",
+                "Visible": true,
+                "FieldId": "ruleCategory"
+            }
+        ]
+    },
+    "Model": {
+        "Schema": {
+            "id": "rebalanceSessionId"
+        },
+        "Fields": [
+            {
+                "Id": "portfolioCode",
+                "Caption": "Portfolio Code",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "portfolioSessionName",
+                "Caption": "Portfolio Session Name",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "UIType": "Link",
+                "Size": {
+                    "Variable": true,
+                    "MinWidth": 200
+                },
+                "Link": {
+                    "Route": "PORTFOLIO_SESSION",
+                    "ValueField": "portfolioSessionId",
+                    "Params": {
+                        "lead": "isLeadPortfolio",
+                        "type": "portfolioType",
+                        "source": "modelSourceType",
+                        "isMSP": "isMSP"
+                    }
+                }
+            },
+            {
+                "Id": "alertType",
+                "Caption": "Alert Type",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "symbol",
+                "Caption": "Symbol",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Size": {
+                    "Width": 75
+                }
+            },
+            {
+                "Id": "transactionType",
+                "CanEdit": false,
+                "CanSearch": true,
+                "Icon": {
+                    "Align": "Prefix",
+                    "HeaderAlign": "Left"
+                },
+                "DataType": "Enum",
+                "UIType": "Icon",
+                "Caption": "Transaction",
+                "Size": {
+                    "Width": 100
+                },
+                "Visible": true
+            },
+            {
+                "Id": "ruleName",
+                "Caption": "Rule Name",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Size": {
+                    "Width": 150
+                }
+            },
+            {
+                "Id": "ruleCategory",
+                "Caption": "Rule Category",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Size": {
+                    "Width": 125
+                }
+            },
+            {
+                "Id": "alertSeverityDescription",
+                "Caption": "Severity",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "enforcementBehaviorDescription",
+                "Caption": "Enforcement",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "reviewStatusDescription",
+                "Caption": "Review Status",
+                "Visible": true,
+                "CanEdit": false,
+                "DataType": "Enum",
+                "Size": {
+                    "Width": 150
+                },
+                "UIType": "Lozengas",
+                "Link": {
+                    "ClassField": "reviewStatus"
+                }
+            },
+            {
+                "Id": "approvalStatus",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Approval Status",
+                "Visible": true
+            },
+            {
+                "Id": "isLeadPortfolio",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "portfolioId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "portfolioType",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "securityId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "alertSeverity",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "enforcementBehavior",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "portfolioSessionId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "modelSourceType",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "isMSP",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "reviewStatus",
+                "CanCustomize": false,
+                "Visible": false
+            }
+        ]
+    }
+}

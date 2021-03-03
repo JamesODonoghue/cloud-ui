@@ -1,0 +1,553 @@
+{
+    "Id": "session-orders",
+    "EntityView": "sessionOrders",
+    "Protocol": "REST_QUERY2",
+    "Caption": "Session Orders",
+    "Version": 0.37,
+    "Config": {
+        "CanFilter": true,
+        "CanSearch": false,
+        "CanEdit": true,
+        "CanSort": false,
+        "CanPage": true,
+        "PageSize": 100
+    },
+    "ViewState": {
+        "Sort": [],
+        "Filter": {
+            "Logic": "OR",
+            "Filters": []
+        },
+        "Params": []
+    },
+    "Model": {
+        "Schema": {
+            "id": "rebalanceSessionId"
+        },
+        "Fields": [
+            {
+                "Id": "issueSeverity",
+                "Icon": {
+                    "IconName": "link"
+                },
+                "Visible": true,
+                "CanSort": false,
+                "CanCustomize": false,
+                "Caption": "",
+                "Frozen": true,
+                "Size": {
+                    "Width": 35
+                }
+            },
+            {
+                "Id": "rowName",
+                "UIType": "Link",
+                "CanCustomize": false,
+                "Frozen": true,
+                "CanSearch": true,
+                "Visible": true,
+                "Caption": "Name",
+                "Link": {
+                    "Route": "PORTFOLIO_SESSION",
+                    "ValueField": "portfolioSessionId",
+                    "Params": {
+                        "lead": "isLeadPortfolio",
+                        "type": "portfolioType",
+                        "source": "modelSourceType",
+                        "isMSP": "isMSP"
+                    }
+                },
+                "Size": {
+                    "Width": 270
+                }
+            },
+            {
+                "Id": "rowCode",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Code",
+                "UIType": "Link",
+                "CanCustomize": true,
+                "Link": {
+                    "Route": "SECURITY_DETAIL",
+                    "ValueField": "securityId"
+                },
+                "Size": {
+                    "Width": 160
+                },
+                "Visible": true
+            },
+            {
+                "Id": "securitySymbol",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Symbol",
+                "UIType": "Link",
+                "CanCustomize": true,
+                "Link": {
+                    "Route": "SECURITY_DETAIL",
+                    "ValueField": "securityId"
+                },
+                "Visible": false
+            },
+            {
+                "Id": "portfolioId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "hasRestrictions",
+                "Caption": "Res",
+                "UIType": "Bool",
+                "DataType": "Bool",
+                "CanCustomize": true,
+                "Visible": true
+            },
+            {
+                "Id": "directNoteCount",
+                "DataType": "Int",
+                "UIType": "Count",
+                "Caption": "Order Notes",
+                "Visible": true,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "traderInstruction",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Trader Instr",
+                "CanCustomize": true,
+                "Visible": false
+            },
+            {
+                "Id": "brokerInstruction",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "Caption": "Broker Instr",
+                "CanCustomize": true,
+                "Visible": false
+            },
+            {
+                "Id": "transactionType",
+                "Caption": "Txn Type"
+            },
+            {
+                "Id": "orderType",
+                "CanEdit": false,
+                "CanSearch": true,
+                "DataType": "Text",
+                "CanCustomize": false,
+                "Visible": false,
+                "Caption": "Order Type"
+            },
+            {
+                "Id": "quantity",
+                "Caption": "Chg in Qty",
+                "CanEdit": true,
+                "DataType": "Float"
+            },
+            {
+                "Id": "price",
+                "Caption": "Price (Local)",
+                "DataType": "Float",
+                "Size": {
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "settleCurrency",
+                "Caption": "CCY (Settle)",
+                "Visible": true
+            },
+            {
+                "Id": "settleSymbol",
+                "Caption": "Settle Cash Symbol",
+                "Visible": true
+            },
+            {
+                "Id": "baseValueChange",
+                "Caption": "Order Value",
+                "DataType": "Float",
+                "UIType": "Currency",
+                "Size": {
+                    "Width": 120
+                }
+            },
+            {
+                "Id": "localTradeMarketValue",
+                "Caption": "Order Value (Local)",
+                "DataType": "Float",
+                "UIType": "Currency",
+                "Size": {
+                    "Width": 120
+                }
+            },
+            {
+                "Id": "startPercent",
+                "Caption": "Start %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Size": {
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "changePercent",
+                "Caption": "Chg %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": true,
+                "Size": {
+                    "Width": 75
+                }
+            },
+            {
+                "Id": "targetPercent",
+                "Caption": "Model Target %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Size": {
+                    "Width": 125
+                }
+            },
+            {
+                "Id": "adjustedTargetPercent",
+                "Caption": "Session Target %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Size": {
+                    "Width": 125
+                }
+            },
+            {
+                "Id": "endPercent",
+                "Caption": "End %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": true,
+                "Size": {
+                    "Width": 80
+                }
+            },
+            {
+                "Id": "endDriftPercent",
+                "Caption": "Drift %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 75
+                },
+                "Visible": true
+            },
+            {
+                "Id": "endCashPercent",
+                "Caption": "Inv End Cash %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": true
+            },
+            {
+                "Id": "timeInForce",
+                "Caption": "TIF",
+                "Size": {
+                    "Width": 40
+                },
+                "Visible": true
+            },
+            {
+                "Id": "tradeDate",
+                "CanEdit": false,
+                "UIType": "DateTime",
+                "DataType": "Date",
+                "Caption": "Trade Date",
+                "Visible": true
+            },
+            {
+                "Id": "allocatedStatus",
+                "CanEdit": false,
+                "Icon": {
+                    "IconName": "Dot"
+                },
+                "DataType": "Html",
+                "Size": {
+                    "Width": 80
+                },
+                "Visible": true,
+                "Caption": "Alloc"
+            },
+            {
+                "Id": "orderId",
+                "CanEdit": false,
+                "DataType": "Int",
+                "UIType": "Id",
+                "Visible": true,
+                "Caption": "Order ID"
+            },
+            {
+                "Id": "reviewStatusDescription",
+                "Caption": "Review Status",
+                "Visible": true,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 150
+                },
+                "UIType": "Lozengas",
+                "Link": {
+                    "ClassField": "reviewStatus"
+                }
+            },
+            {
+                "Id": "orderSource",
+                "DataType": "Text",
+                "CanCustomize": true,
+                "Visible": true,
+                "Caption": "Order Source"
+            },
+            {
+                "Id": "orderApprovalStatus",
+                "DataType": "Text",
+                "CanCustomize": true,
+                "Visible": true,
+                "Caption": "Order Approval Status"
+            },
+            {
+                "Id": "submissionStatus",
+                "CanEdit": false,
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "submissionStatusDescription",
+                "CanEdit": false,
+                "CanSearch": true,
+                "Caption": "Submission Status",
+                "DataType": "Html",
+                "Icon": {
+                    "IconName": "order-status",
+                    "Align": "Postfix",
+                    "HeaderAlign": "Left",
+                    "DerivedFrom": "submissionStatus",
+                    "AdditionalIconClasses": "order-screen"
+                },
+                "CanCustomize": true,
+                "Size": {
+                    "Width": 150
+                },
+                "Visible": true
+            },
+            {
+                "Id": "executionStatus",
+                "CanEdit": false,
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "executionStatusDescription",
+                "CanEdit": false,
+                "CanSearch": true,
+                "Caption": "Execution Status",
+                "DataType": "Html",
+                "Icon": {
+                    "IconName": "order-status",
+                    "Align": "Postfix",
+                    "HeaderAlign": "Left",
+                    "DerivedFrom": "executionStatus",
+                    "AdditionalIconClasses": "order-screen"
+                },
+                "CanCustomize": true,
+                "Size": {
+                    "Width": 150
+                },
+                "Visible": true
+            },
+            {
+                "Id": "orderProposalStrategy",
+                "CanEdit": false,
+                "CanSearch": true,
+                "Caption": "Order Strategy",
+                "Visible": false
+            },
+            {
+                "Id": "isLeadPortfolio",
+                "Caption": "Is Lead Portfolio",
+                "DataType": "Bool",
+                "UIType": "Bool",
+                "Visible": false
+            },
+            {
+                "Id": "startQuantity",
+                "Caption": "Start Qty",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "endQuantity",
+                "Caption": "End Qty ",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "baseStartValue",
+                "Caption": "Start Value (Base)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "localStartValue",
+                "Caption": "Start Value (Local)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "localValueChange",
+                "Caption": "Chg in Value (Local)",
+                "CanCustomize": false,
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "baseEndValue",
+                "Caption": "End Value (Base)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "localEndValue",
+                "Caption": "End Value (Local)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "investimentStartCash",
+                "Caption": "Inv Start Cash",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "investimentStartCashPercentage",
+                "Caption": "Inv Start Cash %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "investimentEndCash",
+                "Caption": "Inv End Cash",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "rGL",
+                "Caption": "RGL",
+                "DataType": "Float",
+                "Visible": false,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "basePrice",
+                "Caption": "Price (Base)",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "localCurrency",
+                "Caption": "CCY (Local)",
+                "Visible": false
+            },
+            {
+                "Id": "closingMethod",
+                "Caption": "Closing Method ",
+                "Visible": false
+            },
+            {
+                "Id": "managerName",
+                "Caption": "Manager",
+                "Visible": false
+            },
+            {
+                "Id": "restrictionFlag",
+                "Caption": "Restriction flag",
+                "DataType": "Float",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "broker",
+                "Caption": "Broker",
+                "Visible": false
+            },
+            {
+                "Id": "portfolioType",
+                "Caption": "Portfolio Type",
+                "DataType": "Enum",
+                "CanCustomize": true,
+                "Visible": false
+            },
+            {
+                "Id": "modelSourceType",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "editedFields",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "rebalanceStatus",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "reviewStatus",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "restrictionSeverity",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "portfolioSessionId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "securityId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "aggregateId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "sessionModelId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "parentId",
+                "CanCustomize": false,
+                "Visible": false
+            },
+            {
+                "Id": "isMSP",
+                "CanCustomize": false,
+                "Visible": false
+            }
+        ]
+    }
+}

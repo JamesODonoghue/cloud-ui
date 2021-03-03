@@ -1,0 +1,33 @@
+{
+    "count": 1,
+    "value": [
+        {
+            "portfolioSessionId": 100163,
+            "portfolioSessionName": "auto_stretch_sc_hh (auto_stretch_sc_hh)",
+            "rebalanceSessionId": 13089,
+            "portfolioId": "c4e8af13-c3b0-4523-822b-e5f8dca7ade4",
+            "portfolioCode": "auto_stretch_sc_hh",
+            "portfolioName": "auto_stretch_sc_hh",
+            "portfolioType": "GROUP",
+            "isLeadPortfolio": false,
+            "symbol": "AUTO_COUNT6",
+            "securityId": "1e83d990-cf1e-4828-bdef-0b81337d28cb",
+            "transactionType": "BUY",
+            "ruleName": "Auto_CCY=GBP/AnySector<10%",
+            "ruleCategory": "Holding Restriction",
+            "alertSeverity": "HARD_RESTRICTION",
+            "alertSeverityDescription": "Hard",
+            "enforcementBehavior": "STRICT",
+            "enforcementBehaviorDescription": "Strict",
+            "reviewStatus": "New",
+            "reviewStatusDescription": "New",
+            "isApprovable": true,
+            "alertType": "Exclusion",
+            "level": "Order",
+            "message": null,
+            "approvalStatus": null,
+            "externalRuleCheckId": null,
+            "routingStatus": null
+        }
+    ]
+}

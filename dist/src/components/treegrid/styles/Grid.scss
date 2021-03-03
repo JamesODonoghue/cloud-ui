@@ -1,0 +1,201 @@
+@import './AdventGrid.scss';
+
+.AGMain * {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: inherit;
+}
+
+.AGMain {
+    a {
+        color: var(--color-brand-primary-light);
+        transition: color 250ms;
+
+        &:hover {
+            color: var(--color-brand-primary-dark);
+        }
+    }
+}
+
+.AGMain {
+    color: var(--color-font-base, #000);
+    font-family: var(--font-family-base, 'sans serif');
+    font-size: var(--size-font-small, 0.875rem);
+}
+
+.AGMain {
+    awc-icon-button {
+        --mdc-icon-size: 16px;
+        --mdc-icon-button-size: 24px;
+    }
+    // Borders
+    .AGBodyMid,
+    .AGHeadMid,
+    .AGBodyLeft,
+    .AGHeadLeft,
+    .AGCellHeader,
+    .AGSolidRow,
+    .AGCell,
+    .AGCellBase {
+        border-color: var(--color-border-base, #f2f2f2);
+    }
+
+    .AGBodyMid,
+    .AGBodyLeft {
+        border-bottom: 1px solid var(--color-border-base, #f2f2f2);
+        border-top: 1px solid var(--color-border-base, #f2f2f2);
+    }
+
+    // Rounded borders
+
+    // .AGHeadLeft {
+    //     border-top-left-radius: var(--rounded-lg);
+    //     overflow: hidden;
+    // }
+    // .AGHeadMid {
+    //     border-top-right-radius: var(--rounded-lg);
+    //     overflow: hidden;
+    // }
+    // .AGBodyLeft {
+    //     border-bottom-left-radius: var(--rounded-lg);
+    //     overflow: hidden;
+    // }
+    // .AGBodyMid {
+    //     border-bottom-right-radius: var(--rounded-lg);
+    //     overflow: hidden;
+    // }
+
+    .AGMainTable {
+        background: none;
+    }
+
+    // Header
+    .AGCellHeader {
+        background-color: var(--color-base-grey-100, #f2f2f2);
+        color: var(--color-font-tertiary);
+        font-weight: 600;
+        border-color: var(--color-border-light, #f2f2f2);
+    }
+    // Cell padding
+    .AGType {
+        overflow: hidden;
+        padding: var(--component-grid-cell-padding, 0.5rem);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .AGNoDataRow {
+        border-bottom: 0;
+        border-top: 1px solid var(--color-border-base, #f2f2f2);
+    }
+
+    .AGFocusRowBorder {
+        border-color: var(--color-base-grey-100);
+    }
+
+    .AGColorSelected,
+    .AGColorSelectedCell {
+        background-color: #ebeff2;
+        // background-color: var(--color-base-grey-100);
+    }
+
+    .AGCellHeaderPanel .AGPanelSelect,
+    .AGCellIndexPanel .AGPanelSelect {
+        background-image: none;
+    }
+    .AGCellHeaderPanel .AGPanelSelectOn,
+    .AGCellIndexPanel .AGPanelSelectOn {
+        background-image: none;
+    }
+
+    .AGCellHeaderPanel {
+        padding: 0;
+        awc-icon-button {
+            margin: 0.25rem 0 0 0.5rem;
+        }
+    }
+
+    .AGCellPanel,
+    .AGCellHeaderPanel {
+        awc-icon-button {
+            color: var(--color-font-tertiary);
+        }
+    }
+
+    .AGCellPanel {
+        padding: 0 var(--size-padding-small);
+    }
+
+    .AGPx1xx {
+        background: inherit;
+        awc-icon-button {
+            display: none;
+        }
+    }
+
+    .AGPx2xx {
+        background: inherit;
+        background-color: #ebeff2;
+    }
+}
+
+[data-user-color-scheme='dark'] {
+    .AGMain * {
+        // Font
+        color: var(--font-color);
+        font-family: var(--font-family-base, 'sans serif');
+        font-size: var(--font-size);
+    }
+
+    .AGMain {
+        // Borders
+        .AGBodyMid,
+        .AGHeadMid,
+        .AGBodyLeft,
+        .AGHeadLeft,
+        .AGCellHeader,
+        .AGCell,
+        .AGCellBase {
+            border-color: var(--table-cell-border-color);
+        }
+
+        .AGBodyMid,
+        .AGBodyLeft {
+            border-bottom: 1px solid var(--table-cell-border-color);
+            border-top: 1px solid var(--table-cell-border-color);
+        }
+
+        // Background colors
+        .AGCellBase {
+            background-color: var(--table-cell-background-color);
+        }
+
+        // Header
+        .AGCellHeader {
+            background-color: var(--color-gray-800);
+            border-color: var(--color-gray-700);
+            color: var(--color-gray-200);
+        }
+    }
+}
+
+.AGMain {
+    awc-icon {
+        direction: ltr;
+        display: inline-block;
+        font-family: var(--mdc-icon-font, 'Material Icons');
+        font-feature-settings: 'liga';
+        font-size: var(--mdc-icon-size, 16px);
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: normal;
+        line-height: 1;
+        overflow-wrap: normal;
+        text-rendering: optimizelegibility;
+        text-transform: none;
+        white-space: nowrap;
+    }
+}

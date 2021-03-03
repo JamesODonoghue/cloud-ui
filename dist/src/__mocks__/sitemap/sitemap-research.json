@@ -1,0 +1,269 @@
+{
+    "viewId": "dashboard",
+    "name": "Dashboard",
+    "route": "/",
+    "children": [
+        {
+            "viewId": "portfolio",
+            "name": "Portfolios",
+            "children": [
+                {
+                    "viewId": "portfolio-overview",
+                    "name": "View Portfolios",
+                    "route": "/portfolios",
+                    "children": [
+                        {
+                            "viewId": "portfolio-detail",
+                            "name": "Portfolio Detail",
+                            "route": "/portfolios/:id",
+                            "children": [
+                                {
+                                    "viewId": "portfolio-summary",
+                                    "name": "Summary",
+                                    "route": "/portfolios/:id/summary",
+                                    "id": "PortfolioId",
+                                    "children": null
+                                },
+                                {
+                                    "viewId": "portfolio-research",
+                                    "name": "Research",
+                                    "id": "PortfolioId",
+                                    "route": "/portfolio/:id/research",
+                                    "children": null
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "viewId": "securities",
+            "name": "Securities",
+            "route": "/securities",
+            "children": [
+                {
+                    "viewId": "securities",
+                    "children": [
+                        {
+                            "viewId": "security-detail",
+                            "name": "Summarys",
+                            "route": "/securities",
+                            "id": "SecurityId",
+                            "children": null
+                        },
+                        {
+                            "viewId": "security-classifications",
+                            "name": "Classifications",
+                            "route": "/securities",
+                            "id": "SecurityId",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "viewId": "security-equivalents",
+                    "name": "Security Equivalents",
+                    "route": "/substitution",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "viewId": "research",
+            "name": "Research",
+            "route": "/research",
+            "children": [
+                {
+                    "viewId": "View Research",
+                    "children": [
+                        {
+                            "viewId": "research-overview",
+                            "name": "Research",
+                            "id": "PortfolioId",
+                            "route": "/research/overview",
+                            "children": null
+                        },
+                        {
+                            "viewId": "research-reccomendation",
+                            "name": "Reccomendation",
+                            "id": "PortfolioId",
+                            "route": "/research/reccomendation",
+                            "children": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "viewId": "settings",
+            "name": "Settings",
+            "children": [
+                {
+                    "viewId": "portfolio-settings",
+                    "name": "Portfolio Settings",
+                    "title": "Portfolio Settings",
+                    "route": "/portfolio-settings",
+                    "children": [
+                        {
+                            "viewId": "portfolio-settings-detail",
+                            "name": "Portfolio Setting",
+                            "route": "/portfolio-settings/:id",
+                            "children": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "viewId": "data-refresh-list",
+            "name": "Data Refresh History",
+            "route": "/data-refresh-list",
+            "hidden": true,
+            "children": null
+        },
+        {
+            "viewId": "config",
+            "name": "Configuration",
+            "route": "/config",
+            "children": [
+                {
+                    "viewId": "firm-settings",
+                    "name": "Firm Settings",
+                    "title": "Firm Settings",
+                    "route": "/firm-settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "sleeve-strategies",
+                    "name": "Sleeve Strategies",
+                    "title": "Sleeve Strategies",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "integration-settings",
+                    "name": "Integration Settings",
+                    "title": "Integration Settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "valuation-settings",
+                    "name": "Valuation Settings",
+                    "title": "Valuation Settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "tax-settings",
+                    "name": "Tax Settings",
+                    "title": "Tax Settings",
+                    "children": null,
+                    "params": {}
+                },
+                {
+                    "viewId": "users",
+                    "name": "Users",
+                    "route": "/users",
+                    "children": [
+                        {
+                            "viewId": "user-detail",
+                            "name": "User Detail",
+                            "title": "Summary",
+                            "children": null,
+                            "params": {
+                                "settings": {
+                                    "entityView": "user-detail",
+                                    "id": null,
+                                    "htmlID": "users-list",
+                                    "channel": "USERS",
+                                    "paging": true
+                                }
+                            }
+                        },
+                        {
+                            "viewId": "user-roles",
+                            "name": "User Roles",
+                            "title": "Roles",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "viewId": "groups",
+                    "name": "Groups",
+                    "route": "/groups",
+                    "children": [
+                        {
+                            "viewId": "group-detail",
+                            "name": "Group Detail",
+                            "title": "Summary",
+                            "children": null
+                        },
+                        {
+                            "viewId": "group-users",
+                            "name": "Members",
+                            "title": "Members",
+                            "children": null
+                        },
+                        {
+                            "viewId": "group-resources",
+                            "name": "Resources",
+                            "title": "Resources",
+                            "children": null
+                        },
+                        {
+                            "viewId": "group-roles",
+                            "name": "Roles",
+                            "title": "Roles",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "viewId": "roles",
+                    "name": "Roles",
+                    "route": "/roles",
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "viewId": "role-permissions",
+                                    "name": "Role Detail",
+                                    "title": "Permissions",
+                                    "route": "/roles",
+                                    "children": null,
+                                    "params": {
+                                        "settings": {
+                                            "viewId": "role-permissions",
+                                            "htmlID": "role-permissions",
+                                            "entityView": "role-detail",
+                                            "channel": "ROLE_DETAIL"
+                                        }
+                                    }
+                                },
+                                {
+                                    "viewId": "role-users",
+                                    "name": "Role Users",
+                                    "route": "/roles",
+                                    "title": "Users",
+                                    "children": null,
+                                    "params": {
+                                        "settings": {
+                                            "viewId": "role-users",
+                                            "entityView": "role-users",
+                                            "htmlID": "role-users-list",
+                                            "channel": "ROLE_DETAIL"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

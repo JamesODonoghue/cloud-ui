@@ -1,0 +1,52 @@
+{
+    "Cfg": {
+        "Style": "AG",
+        "Styles": "{AG: {Name:\"Advent\", CSS: \"*Styles/AdventGrid.css\"}}",
+        "Code": "GGRDAMQPUIDNF",
+        "TestIds": 1,
+        "SuppressCfg": 3,
+        "MaxHeight": 1,
+        "ConstHeight": 1,
+        "MaxWidth": 0,
+        "Editing": 0,
+        "Adding": 0,
+        "Deleting": 0,
+        "Selecting": 0,
+        "Dragging": 0,
+        "Dropping": 0,
+        "ShowDrag": 0,
+        "DragObject": 0,
+        "MaxSort": 1,
+        "ColorState": 0,
+        "Hover": 0,
+        "CustomScroll": 3,
+        "ColMoving": 0,
+        "ColResizing": 0,
+        "TouchScroll": 3,
+        "ChildPartMin": 30,
+        "CacheTimeout": 15,
+        "JSZip": 0,
+        "SuppressAnimations": 1,
+        "AnimateDialogs": 0,
+        "TipStart": 1
+    },
+    "Actions": {
+        "OnClickCell": "ClearSelection+FocusRow+Focus+StartEdit+SelectRow"
+    },
+    "Pager": {
+        "Visible": 0
+    },
+    "Toolbar": {
+        "Visible": 0
+    },
+    "Header": {
+        "SortIcons": 2
+    },
+    "Panel": {
+        "Visible": 1,
+        "Select": 1,
+        "Width": 18,
+        "Delete": 0,
+        "PanelSelectTip": 0
+    }
+}

@@ -1,0 +1,39 @@
+; SAPI properties
+TGGrids
+TGDesigners
+
+; SAPI functions
+TGTreeGrid
+TGStartTreeGrid
+TGTreeGridLoaded
+TGCancelEvent
+
+; Required properties
+TGGet
+Try
+Catch
+TGComponent
+LZD
+DLZ
+MS
+MX
+ME
+_5T2
+_5T3
+_5T4
+TGInit
+LZDX
+
+; Lib
+JSZip
+TGRequests
+TGDialogs
+TGFireMouseEvent
+TGNoIEClientRect
+TGAreaObjects
+TGGetTextWidth
+TGTestKeyDate
+TGDefNames
+canvg
+TGMoveMouseObject
+TGDelMouseObject

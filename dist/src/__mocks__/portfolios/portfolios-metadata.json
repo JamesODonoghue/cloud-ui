@@ -1,0 +1,1075 @@
+{
+    "Id": "portfolio-overview",
+    "EntityView": "portfolio",
+    "Protocol": "odata",
+    "Caption": "Portfolios",
+    "Version": 1.31,
+    "Config": {
+        "CanFilter": true,
+        "CanSearch": true,
+        "CanSort": true,
+        "CanPage": true,
+        "PageSize": 100
+    },
+    "ViewState": {
+        "Sort": [
+            {
+                "FieldId": "name",
+                "Dir": "asc"
+            }
+        ],
+        "Filter": {
+            "Logic": "OR",
+            "Filters": []
+        },
+        "Params": [
+            {
+                "Key": "portfoliolistid",
+                "Caption": "Portfolio List",
+                "Required": true,
+                "Visible": true,
+                "FieldId": "portfolioListId"
+            },
+            {
+                "Key": "modelid",
+                "Caption": "Models",
+                "Visible": true,
+                "FieldId": "externalModelId"
+            },
+            {
+                "Key": "pending-orders",
+                "Caption": "Has Pending Orders",
+                "Visible": false,
+                "FieldId": "hasApprovedWorkingTransactions"
+            },
+            {
+                "Key": "has-cash-transaction",
+                "Caption": "Has Cash Transaction",
+                "Visible": false,
+                "FieldId": "containsIntradayCash"
+            },
+            {
+                "Key": "tradeparameterid",
+                "Caption": "Trade Settings",
+                "Visible": false,
+                "FieldId": "tradeParameterId"
+            },
+            {
+                "Key": "managerid",
+                "Caption": "Manager",
+                "Visible": true,
+                "FieldId": "managerId"
+            },
+            {
+                "Key": "strategyid",
+                "Caption": "Strategy",
+                "Visible": true,
+                "FieldId": "investmentStrategyId"
+            },
+            {
+                "Key": "days-since-traded",
+                "Caption": "Last Trade (Days)",
+                "Visible": false,
+                "FieldId": "daysSinceTraded"
+            },
+            {
+                "Key": "days-since-reviewed",
+                "Caption": "Last Review (Days)",
+                "Visible": false,
+                "FieldId": "daysSinceReviewed"
+            },
+            {
+                "Key": "lastReviewDate",
+                "Caption": "Last Review Date",
+                "Visible": false,
+                "FieldId": "lastReviewDate"
+            },
+            {
+                "Key": "lastTradeDate",
+                "Caption": "Last Trade Date",
+                "Visible": false,
+                "FieldId": "lastTradeDate"
+            },
+            {
+                "Key": "last-rebalance",
+                "Caption": "Last Rebalance",
+                "Visible": false,
+                "FieldId": "lsRuT"
+            },
+            {
+                "Key": "market-value",
+                "Caption": "Market Value",
+                "Visible": true,
+                "FieldId": "lsTmv"
+            },
+            {
+                "Key": "portfolio-review-status",
+                "Caption": "Review Status",
+                "Visible": false,
+                "FieldId": "lsRvS"
+            },
+            {
+                "Key": "start-drift-percent",
+                "Caption": "Start Drift %",
+                "Visible": false,
+                "FieldId": "lsToD"
+            },
+            {
+                "Key": "number-tol-exceptions",
+                "Caption": "# Tol Exceptions",
+                "Visible": false,
+                "FieldId": "lsOTC"
+            },
+            {
+                "Key": "portfolio-type",
+                "Caption": "Portfolio Type",
+                "Visible": true,
+                "FieldId": "portfolioType"
+            },
+            {
+                "Key": "has-parent-portfolio",
+                "Caption": "Has Parent Portfolio",
+                "Visible": false,
+                "FieldId": "hasParentPortfolio"
+            },
+            {
+                "Key": "cash-to-rebal-percent",
+                "Caption": "Cash vs Target %",
+                "Visible": false,
+                "FieldId": "lsCRP"
+            },
+            {
+                "Key": "cash-to-rebal",
+                "Caption": "Cash vs Target",
+                "Visible": false,
+                "FieldId": "lsCTR"
+            },
+            {
+                "Key": "portfolio-tax-status",
+                "Caption": "Tax Status",
+                "Visible": false,
+                "FieldId": "tStat"
+            },
+            {
+                "Key": "model-definition",
+                "Caption": "Is Lead Portfolio",
+                "UIType": "Bool",
+                "DataType": "Bool",
+                "Visible": false,
+                "FieldId": "isLeadPortfolio"
+            },
+            {
+                "Key": "is-msp",
+                "Caption": "Is Multi-Strategy Portfolio",
+                "UIType": "Bool",
+                "DataType": "Bool",
+                "Visible": false,
+                "FieldId": "isMSP"
+            },
+            {
+                "Key": "model-assignment",
+                "Caption": "Is Model Assigned",
+                "UIType": "Bool",
+                "DataType": "Bool",
+                "Visible": false,
+                "FieldId": "isModelAssigned"
+            },
+            {
+                "Key": "portfolio-status",
+                "Caption": "Completion Status",
+                "Visible": false,
+                "FieldId": "lsPRS"
+            },
+            {
+                "Key": "base-currency",
+                "Caption": "Base Currency",
+                "Visible": false,
+                "FieldId": "baseCurrencyId"
+            },
+            {
+                "Key": "sleevestrategyid",
+                "Caption": "Sleeve Strategy",
+                "Visible": false,
+                "FieldId": "sleeveStrategyId"
+            },
+            {
+                "Key": "total-budget-drift",
+                "Caption": "Total Budget Drift",
+                "Visible": false,
+                "FieldId": "proposedTotalRemainingCapitalGainsBudget"
+            },
+            {
+                "Key": "lt-budget-drift",
+                "Caption": "LT Budget Drift",
+                "Visible": false,
+                "FieldId": "proposedLongTermRemainingCapitalGainsBudget"
+            },
+            {
+                "Key": "st-budget-drift",
+                "Caption": "ST Budget Drift",
+                "Visible": false,
+                "FieldId": "proposedShortTermRemainingCapitalGainsBudget"
+            },
+            {
+                "Key": "total-gains-budget",
+                "Caption": "Total Gains Budget",
+                "Visible": false,
+                "FieldId": "totalCapitalGainsBudget"
+            },
+            {
+                "Key": "lt-gains-budget",
+                "Caption": "LT Gains Budget",
+                "Visible": false,
+                "FieldId": "longTermCapitalGainsBudget"
+            },
+            {
+                "Key": "st-gains-budget",
+                "Caption": "ST Gains Budget",
+                "Visible": false,
+                "FieldId": "shortTermCapitalGainsBudget"
+            },
+            {
+                "Key": "total-rgl",
+                "Caption": "Total RGL",
+                "Visible": false,
+                "FieldId": "realizedGainLossYTD"
+            },
+            {
+                "Key": "lt-rgl",
+                "Caption": "LT RGL",
+                "Visible": false,
+                "FieldId": "realizedGainLossLong"
+            },
+            {
+                "Key": "st-rgl",
+                "Caption": "ST RGL",
+                "Visible": false,
+                "FieldId": "realizedGainLossShort"
+            }
+        ]
+    },
+    "Model": {
+        "Schema": {
+            "id": "portfolioId"
+        },
+        "Fields": [
+            {
+                "Id": "code",
+                "CanSearch": true,
+                "UIType": "Link",
+                "CanCustomize": true,
+                "Recommended": true,
+                "Visible": true,
+                "Caption": "Code",
+                "Link": {
+                    "Route": "PORTFOLIO_DETAIL",
+                    "ValueField": "portfolioId",
+                    "Params": {
+                        "lead": "isLeadPortfolio",
+                        "type": "portfolioType",
+                        "source": "modelSourceType",
+                        "isMSP": "isMSP"
+                    }
+                },
+                "Size": {
+                    "Width": 160
+                }
+            },
+            {
+                "Id": "name",
+                "Caption": "Portfolio",
+                "ShowTip": true,
+                "CanSearch": true,
+                "CanEdit": false,
+                "CanCustomize": true,
+                "Visible": true,
+                "Size": {
+                    "Variable": true,
+                    "MinWidth": 400
+                }
+            },
+            {
+                "Id": "invSt",
+                "Caption": "Strategy",
+                "Visible": true,
+                "CanSearch": true,
+                "Size": {
+                    "Width": 160
+                }
+            },
+            {
+                "Id": "orderCreationParameterContainerName",
+                "CanSearch": true,
+                "UIType": "Link",
+                "CanCustomize": true,
+                "Visible": false,
+                "Caption": "Portfolio Setting",
+                "Link": {
+                    "Route": "ORDER_CREATION_SETTINGS",
+                    "ValueField": "orderCreationParameterContainerId"
+                },
+                "Size": {
+                    "Width": 170
+                }
+            },
+            {
+                "Id": "mName",
+                "Caption": "Model",
+                "CanEdit": false,
+                "Visible": true,
+                "CanSearch": true,
+                "Recommended": true,
+                "DataType": "Html",
+                "MinWidth": "140",
+                "Size": {
+                    "Width": 160
+                }
+            },
+            {
+                "Id": "assocType",
+                "Caption": "Model Asgmt Type",
+                "CanCustomize": true,
+                "CanSearch": true,
+                "CanEdit": false,
+                "Visible": false
+            },
+            {
+                "Id": "parentPortfolioCount",
+                "Caption": "Parent Portfolio",
+                "CanSearch": false,
+                "DataType": "Int",
+                "UIType": "Count",
+                "Visible": false,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "directNoteCount",
+                "Caption": "Portfolio Notes",
+                "CanSearch": false,
+                "DataType": "Int",
+                "UIType": "Count",
+                "Visible": true,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "currency",
+                "Caption": "Base Currency",
+                "Visible": true,
+                "DataType": "Text",
+                "CanSearch": true,
+                "CanEdit": false,
+                "CanCustomize": true,
+                "Size": {
+                    "Width": 120
+                }
+            },
+            {
+                "Id": "portfolioType",
+                "Caption": "Portfolio Type",
+                "DataType": "Enum",
+                "CanCustomize": true,
+                "CanSearch": true,
+                "CanEdit": false,
+                "Visible": true
+            },
+            {
+                "Id": "sleeveStrategyCode",
+                "Caption": "Sleeve Strategy Code",
+                "CanCustomize": true,
+                "CanSearch": true,
+                "CanEdit": false,
+                "Visible": false
+            },
+            {
+                "Id": "sleeveStrategyName",
+                "Caption": "Sleeve Strategy",
+                "CanCustomize": true,
+                "CanSearch": true,
+                "CanEdit": false,
+                "Visible": false
+            },
+            {
+                "Id": "manager",
+                "Caption": "Manager",
+                "CanSearch": true,
+                "Size": {
+                    "Width": 85
+                }
+            },
+            {
+                "Id": "brokerName",
+                "Caption": "Broker",
+                "CanCustomize": true,
+                "CanSearch": true,
+                "CanEdit": false,
+                "Visible": false,
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "custodianName",
+                "Caption": "Custodian",
+                "CanCustomize": true,
+                "CanSearch": true,
+                "CanEdit": false,
+                "Visible": false,
+                "Size": {
+                    "Width": 110
+                }
+            },
+            {
+                "Id": "lsTmv",
+                "Caption": "Total MV",
+                "Visible": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "tStat",
+                "Caption": "Tax Status",
+                "CanSearch": true,
+                "Visible": true,
+                "CanCustomize": true,
+                "Size": {
+                    "MinWidth": 140
+                }
+            },
+            {
+                "Id": "investableMarketValue",
+                "Caption": "Investable MV",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "investableMarketValueBase",
+                "Caption": "Investable MV Base",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "dayST",
+                "Caption": "Last Trade (Days)",
+                "Visible": true,
+                "DataType": "Int",
+                "Size": {
+                    "Width": 135
+                }
+            },
+            {
+                "Id": "daysSinceReviewed",
+                "Caption": "Last Review (Days)",
+                "Visible": true,
+                "DataType": "Int",
+                "Size": {
+                    "Width": 135
+                }
+            },
+            {
+                "Id": "lastReviewDate",
+                "Caption": "Last Review Date",
+                "DataType": "Date",
+                "UIType": "DateTime",
+                "Visible": false,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "lastTradeDate",
+                "Caption": "Last Trade Date",
+                "DataType": "Date",
+                "UIType": "DateTime",
+                "Visible": false,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "lsToD",
+                "Caption": "Start Drift %",
+                "Visible": true,
+                "Recommended": true,
+                "CanEdit": false,
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "lsOTC",
+                "Caption": "# Tol Exceptions",
+                "Visible": false,
+                "DataType": "Int"
+            },
+            {
+                "Id": "lsMCV",
+                "Caption": "Model Cash Target",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "lsMCT",
+                "Caption": "Model Cash Target %",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 160
+                }
+            },
+            {
+                "Id": "lsTCN",
+                "Caption": "Total Cash Needed",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "TCNP",
+                "Caption": "Total Cash Needed %",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 160
+                }
+            },
+            {
+                "Id": "lsStc",
+                "Caption": "Start Cash",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "lsSCP",
+                "Caption": "Start Cash %",
+                "Visible": false,
+                "CanEdit": false,
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "Size": {
+                    "Width": 110
+                }
+            },
+            {
+                "Id": "lsRCP",
+                "Caption": "Req Cash %",
+                "CanEdit": false,
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "Size": {
+                    "Width": 100
+                }
+            },
+            {
+                "Id": "lsCRP",
+                "Caption": "Cash vs Target %",
+                "Visible": true,
+                "CanEdit": false,
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "Size": {
+                    "Width": 125
+                }
+            },
+            {
+                "Id": "lsPRD",
+                "Caption": "Completion Status",
+                "DataType": "Text",
+                "CanSearch": true,
+                "CanEdit": false,
+                "Visible": false,
+                "UIType": "Ribbon",
+                "Size": {
+                    "Width": 140
+                },
+                "Link": {
+                    "ClassField": "lsPRS"
+                }
+            },
+            {
+                "Id": "lsRvD",
+                "Caption": "Review Status",
+                "Visible": false,
+                "DataType": "Text",
+                "CanSearch": true,
+                "CanEdit": false,
+                "UIType": "Lozengas",
+                "Link": {
+                    "ClassField": "lsRvS"
+                },
+                "Size": {
+                    "Width": 150
+                }
+            },
+            {
+                "Id": "lsRuT",
+                "Caption": "Last Rebalance",
+                "DataType": "Date",
+                "UIType": "DateTime",
+                "Visible": false,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "lsRSN",
+                "Caption": "Last Session",
+                "CanSearch": true,
+                "Visible": true,
+                "UIType": "Link",
+                "Link": {
+                    "Route": "REBALANCE_SESSION",
+                    "NameField": "name",
+                    "ValueField": "lsRSI"
+                },
+                "Size": {
+                    "Width": 200
+                }
+            },
+            {
+                "Id": "oDate",
+                "Caption": "Start Date",
+                "DataType": "Date",
+                "UIType": "Date",
+                "Visible": false,
+                "CanEdit": false,
+                "Size": {
+                    "Width": 90
+                }
+            },
+            {
+                "Id": "aType",
+                "Caption": "Account Type",
+                "CanSearch": true,
+                "Visible": false,
+                "CanCustomize": false,
+                "Size": {
+                    "Width": 110
+                }
+            },
+            {
+                "Id": "tradeParameterName",
+                "Caption": "Trade Setting",
+                "CanSearch": true,
+                "Visible": false,
+                "UIType": "Link",
+                "Link": {
+                    "Route": "TRADE_PARAM",
+                    "ValueField": "tradeParameterId"
+                },
+                "Size": {
+                    "Width": 170
+                }
+            },
+            {
+                "Id": "rebalanceParameterName",
+                "Caption": "Rebalance Constraint",
+                "CanSearch": false,
+                "Visible": false,
+                "CanCustomize": false,
+                "Size": {
+                    "Width": 185
+                }
+            },
+            {
+                "Id": "aStat",
+                "Caption": "Account Status",
+                "CanSearch": true,
+                "Visible": false,
+                "Size": {
+                    "Width": 115
+                }
+            },
+            {
+                "Id": "lsRqC",
+                "Caption": "Req Cash",
+                "CanSort": false,
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "Size": {
+                    "Width": 110
+                }
+            },
+            {
+                "Id": "lsCTR",
+                "Caption": "Cash vs Target",
+                "DataType": "Float",
+                "Visible": false,
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 110
+                }
+            },
+            {
+                "Id": "totalMarketValueLocal",
+                "Caption": "Total MV Base",
+                "Visible": false,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "CanCustomize": true,
+                "Size": {
+                    "Width": 180
+                }
+            },
+            {
+                "Id": "isLeadPortfolio",
+                "Caption": "Is Lead Portfolio",
+                "DataType": "Bool",
+                "Visible": false,
+                "UIType": "Bool"
+            },
+            {
+                "Id": "isModelAssigned",
+                "Caption": "Is Model Assigned",
+                "DataType": "Bool",
+                "Visible": false,
+                "UIType": "Bool"
+            },
+            {
+                "Id": "tul",
+                "Caption": "Total Unrealized Loss",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency"
+            },
+            {
+                "Id": "tug",
+                "Caption": "Total Unrealized Gain",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency"
+            },
+            {
+                "Id": "stugl",
+                "Caption": "ST UGL",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float"
+            },
+            {
+                "Id": "tstperc",
+                "Caption": "ST UGL %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "ltugl",
+                "Caption": "LT UGL",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float"
+            },
+            {
+                "Id": "tltperc",
+                "Caption": "LT UGL %",
+                "UIType": "PercentageFinancial",
+                "DataType": "Float",
+                "Visible": false
+            },
+            {
+                "Id": "tlperc",
+                "Caption": "Total Unrealized Loss %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "Visible": false,
+                "CanCustomize": true
+            },
+            {
+                "Id": "tgperc",
+                "Caption": "Total Unrealized Gain %",
+                "DataType": "Float",
+                "UIType": "PercentageFinancial",
+                "Visible": false,
+                "CanCustomize": true
+            },
+            {
+                "Id": "proposedTotalRemainingCapitalGainsBudget",
+                "Caption": "Total Budget Drift",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "proposedLongTermRemainingCapitalGainsBudget",
+                "Caption": "LT Budget Drift",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "proposedShortTermRemainingCapitalGainsBudget",
+                "Caption": "ST Budget Drift",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "totalCapitalGainsBudget",
+                "Caption": "Total Gains Budget",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "longTermCapitalGainsBudget",
+                "Caption": "LT Gains Budget",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "shortTermCapitalGainsBudget",
+                "Caption": "ST Gains Budget",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "realizedGainLossYTD",
+                "Caption": "Total RGL",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "realizedGainLossLong",
+                "Caption": "LT RGL",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "realizedGainLossShort",
+                "Caption": "ST RGL",
+                "Visible": false,
+                "CanCustomize": true,
+                "DataType": "Float",
+                "UIType": "Currency",
+                "CanEdit": false,
+                "Size": {
+                    "Width": 140
+                }
+            },
+            {
+                "Id": "lsRSI",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "lsRvS",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "lsPRS",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "externalModelId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "modelId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "assocConflict",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "portfolioId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "orderCreationParameterContainerId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "tradeParameterId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "rebalanceParameterId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "changedEntity",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "hasApprovedWorkingTransactions",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "containsIntradayCash",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "modelSourceType",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "portfolioListId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "managerId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "investmentStrategyId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "baseCurrencyId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "brokerId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "custodianId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "daysSinceTraded",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "indirectNoteCount",
+                "Visible": false,
+                "CanCustomize": false,
+                "CanSearch": false
+            },
+            {
+                "Id": "isMSP",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "sleeveStrategyId",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "isOverlay",
+                "Visible": false,
+                "CanCustomize": false
+            },
+            {
+                "Id": "hasParentPortfolio",
+                "Visible": false,
+                "CanCustomize": false
+            }
+        ]
+    }
+}
